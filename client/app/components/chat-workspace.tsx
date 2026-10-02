@@ -46,7 +46,7 @@ export default function ChatWorkspace() {
   setLoading(true);
 
   try {
-    const res = await fetch(`http://localhost:8000/chat?q=${encodeURIComponent(userQuery)}`);
+    const res = await fetch(`${process.env.SERVER_URL}/chat?q=${encodeURIComponent(userQuery)}`);
     const data = await res.json();
 
     // Check if data.answer exists and contains text
